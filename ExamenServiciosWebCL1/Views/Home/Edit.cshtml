@@ -1,0 +1,52 @@
+﻿@model ExamenServiciosWebCL1.Models.Alumno
+
+<h2>Editar Alumno</h2>
+
+<form asp-action="Edit" >
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group col-md-4">
+        <label asp-for="Nombre">Nombre</label>
+        <input asp-for="Nombre" class="form-control" required>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="Apellido">Apellido</label>
+        <input asp-for="Apellido" class="form-control" required>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="DNI">DNI</label>
+        <input asp-for="DNI" class="form-control" required>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="FechaNacimiento">Fecha de Nacimiento</label>
+        <input asp-for="FechaNacimiento" type="date" class="form-control" required>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="CorreoElectronico">Correo Electrónico</label>
+        <input asp-for="CorreoElectronico" type="email" class="form-control" required>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="Celular">Celular</label>
+        <input asp-for="Celular" class="form-control" required>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="NombreContactoEmergencia">Nombre de Contacto (Emergencia)</label>
+        <input asp-for="NombreContactoEmergencia" class="form-control" required>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="TelefonoContactoEmergencia">Teléfono de Contacto (Emergencia)</label>
+        <input asp-for="TelefonoContactoEmergencia" class="form-control" required>
+    </div>
+
+    <div class="form-group" method="post">
+        <button type="submit" class="btn btn-info">Guardar Cambios</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>

@@ -1,0 +1,67 @@
+﻿@model List<ExamenServiciosWebCL1.Models.Alumno>
+
+<h2 class="titulo">Mantenimiento de alumnos</h2>
+
+<div class="crearnuevo">
+    <a asp-controller="Home" asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
+
+</div>
+
+<div class="table-container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>DNI</th>
+                <th>Fecha de Nacimiento</th>
+                <th>Correo Electrónico</th>
+                <th>Celular</th>
+                <th>Nombre de Contacto (Emergencia)</th>
+                <th>Teléfono de Contacto (Emergencia)</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var alumno in Model)
+            {
+                <tr>
+                    <td>@alumno.Id</td>
+                    <td>@alumno.Nombre</td>
+                    <td>@alumno.Apellido</td>
+                    <td>@alumno.DNI</td>
+                    <td>@alumno.FechaNacimiento?.ToString("dd/MM/yyyy")</td>
+                    <td>@alumno.CorreoElectronico</td>
+                    <td>@alumno.Celular</td>
+                    <td>@alumno.NombreContactoEmergencia</td>
+                    <td>@alumno.TelefonoContactoEmergencia</td>
+                    <td>
+                        <a asp-controller="Home" asp-action="Edit" asp-route-id="@alumno.Id" class="btn btn-info btn-sm crud-button">Editar</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-id="@alumno.Id" class="btn btn-danger btn-sm crud-button">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .titulo {
+        text-align: center;
+        color: blue;
+        margin-bottom: 20px; 
+    }
+
+    .crearnuevo {
+        text-align: left; 
+        margin-bottom: 10px; 
+    }
+
+    .crud-button {
+        margin-left: 5px;
+    }
+</style>

@@ -1,0 +1,58 @@
+﻿@model ExamenServiciosWebCL1.Models.Alumno
+
+<h2>Crear Nuevo Alumno</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group col-md-4">
+        <label asp-for="Nombre">Nombre</label>
+        <input asp-for="Nombre" class="form-control" placeholder="Nombre" required>
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="Apellido">Apellido</label>
+        <input asp-for="Apellido" class="form-control" placeholder="Apellido" required>
+        <span asp-validation-for="Apellido" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="DNI">DNI</label>
+        <input asp-for="DNI" class="form-control" placeholder="DNI" required>
+        <span asp-validation-for="DNI" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="FechaNacimiento">Fecha de Nacimiento</label>
+        <input asp-for="FechaNacimiento" type="date" class="form-control" required>
+        <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="CorreoElectronico">Correo Electrónico</label>
+        <input asp-for="CorreoElectronico" type="email" class="form-control" placeholder="Correo Electrónico" required>
+        <span asp-validation-for="CorreoElectronico" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="Celular">Celular</label>
+        <input asp-for="Celular" class="form-control" placeholder="Celular" required>
+        <span asp-validation-for="Celular" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="NombreContactoEmergencia">Nombre de Contacto (Emergencia)</label>
+        <input asp-for="NombreContactoEmergencia" class="form-control" placeholder="Nombre de Contacto (Emergencia)" required>
+        <span asp-validation-for="NombreContactoEmergencia" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-4">
+        <label asp-for="TelefonoContactoEmergencia">Teléfono de Contacto (Emergencia)</label>
+        <input asp-for="TelefonoContactoEmergencia" class="form-control" placeholder="Teléfono de Contacto (Emergencia)" required>
+        <span asp-validation-for="TelefonoContactoEmergencia" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Guardar</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    </div>
+</form>
